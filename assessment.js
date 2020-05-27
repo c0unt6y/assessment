@@ -11,7 +11,7 @@ const tweetDivided = document.getElementById('tweet-area');
  */
 function removeAllChildren(element) {
     while (element.firstChild) {
-      // 子どもの要素があるかぎり削除
+      // 子どもの要素があるかぎり削除する
       element.removeChild(element.firstChild);
     }
   }
