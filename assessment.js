@@ -12,14 +12,29 @@ assessmentButton.onclick = () => {
     }
     // 診断結果表示エリア
     resultDivided.innerText = ('');
-    const header = document.createElement('h3');
-    header.innerText = ('診断結果');
-    resultDivided.appendChild(header);
+
+    //headerDividedの作成
+    const headerDivided = document.createElement('div');
+    headerDivided.setAttribute('class', 'card-header');
+    headerDivided.innerText= '診断結果';
+
+    //bodyDividedの作成
+    const bodyDivided = document.createElement('div');
+    bodyDivided.setAttribute('class', 'card-body');
 
     const paragraph = document.createElement('p');
+    paragraph.setAttribute('class', 'card-text');
     const result = assessment(userName);
-    paragraph.innerText = (result);
-    resultDivided.appendChild(paragraph)
+    paragraph.innerText = result;
+    bodyDivided.appendChild(paragraph);
+
+    //resultDividedにBootstrapのスタイルを適用する
+    resultDivided.setAttribute('class', 'card');
+    resultDivided.setAttribute('style', 'maxwidth: 700px');
+
+    resultDivided.appendChild(headerDivided);
+    resultDivided.appendChild(bodyDivided);
+
     // ツイートエリアの作成
     tweetDivided.innerText = '';
     const anchor = document.createElement('a');
